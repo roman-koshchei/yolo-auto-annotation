@@ -1,0 +1,25 @@
+[project]
+name = "yolo-auto-annotation"
+version = "0.1.0"
+description = "Create dataset for future YOLO training by detecting bounding boxes using Moondream"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "accelerate>=1.6.0",
+    "black>=25.1.0",
+    "pyvips>=3.0.0",
+    "pyvips-binary>=8.16.1",
+    "torch>=2.6.0",
+    "torchvision>=0.21.0",
+    "transformers>=4.51.3",
+]
+
+
+[tool.uv.sources]
+torch = [{ index = "pytorch-cu124" }]
+torchvision = [{ index = "pytorch-cu124" }]
+
+[[tool.uv.index]]
+name = "pytorch-cu124"
+url = "https://download.pytorch.org/whl/cu124"
+explicit = true
