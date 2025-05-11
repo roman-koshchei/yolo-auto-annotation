@@ -4,6 +4,8 @@ Using Moondream visual model the script will detect object on specified images a
 
 Currently it supports only **single class**, aka all labels will represent single class. Because that was my requirement for the tool.
 
+https://github.com/user-attachments/assets/92007c2a-5cc4-4f7d-838a-138e4e84fd19
+
 ## Run
 
 Currently script uses CUDA, if you don't have NVIDIA GPU then you will need to do some adjustments.
