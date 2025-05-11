@@ -16,7 +16,7 @@ def get_image_files(directory: str) -> list[str]:
             _, ext = os.path.splitext(file_name)
             if ext in image_exts:
                 image_files.append(file_path)
-    
+
     return image_files
 
 
@@ -40,12 +40,14 @@ def detect(model, img: Image.Image, label: str):
         bounding_boxes.append([x_center, y_center, width, height])
     return bounding_boxes
 
+
 def get_processed_data(path: str):
     if os.path.exists(path):
         with open(path, "r") as f:
             return json.load(f)
     else:
         return {"image_counter": 0, "files": []}
+
 
 def main():
     parser = argparse.ArgumentParser(
@@ -92,7 +94,7 @@ def main():
     labels_train_dir = os.path.join(destination_directory, "labels", "train")
 
     processed_data_path = os.path.join(destination_directory, "processed.json")
-    processed_data = get_processed_data(processed_data_path)    
+    processed_data = get_processed_data(processed_data_path)
     image_counter = processed_data["image_counter"]
     processed_files = set(processed_data["files"])
 
